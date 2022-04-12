@@ -1,0 +1,17 @@
+<h2>Student List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Class</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let stu of students">
+            <td>{{stu.name}}</td>
+            <td>{{stu.class}}</td>
+        </tr>
+    </tbody>
+</table>
