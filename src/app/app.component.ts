@@ -12,8 +12,13 @@ export class AppComponent {
   activeImgUrl = 'https://media.istockphoto.com/photos/cat-world-picture-id1311993425?s=612x612';
   dogList:string[] = [];
   catList:string[] = [];
+  showDogMessage = false;
   constructor(private slideshowService: SlideshowService){
 
+  }
+
+  onDogSlideshowEnded(){
+    this.showDogMessage = true;
   }
 
   ngOnInit(){

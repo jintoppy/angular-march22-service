@@ -3,8 +3,21 @@
 <img height="100"  [src]="activeImgUrl" alt="">
 
 
-<app-slideshow slideshowTitle="Dog slideshow" [urls]="dogList"></app-slideshow>
+<app-slideshow 
+    [slideshowTitle]="dogSlideshowTitle" 
+    [urls]="dogList"
+    (slideshowEnded)="onDogSlideshowEnded()"
+></app-slideshow>
+<h3 *ngIf="showDogMessage">Dog slideshow finished</h3>
+
+<!-- <button 
+    [disabled]="isButtonDisabled"
+     title="my button title"
+     (click)="onBtnClick()"
+>Click me</button> -->
 
 <app-slideshow slideshowTitle="Cat slideshow" [urls]="catList"></app-slideshow>
 
 <app-student-list></app-student-list>
+
+

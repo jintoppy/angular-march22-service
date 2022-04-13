@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-slideshow',
@@ -11,6 +11,11 @@ export class SlideshowComponent implements OnInit {
 
   @Input()
   urls:string[] = [];
+
+  @Output()
+  slideshowEnded: EventEmitter<void> = new EventEmitter();
+
+  
   activeIndex=0;
   constructor() { }
 
@@ -22,10 +27,15 @@ export class SlideshowComponent implements OnInit {
     return this.urls[this.activeIndex];
   }
   onNext(){
-    this.activeIndex++;  
-    if(this.activeIndex=== this.urls.length){
-      this.activeIndex = 0;
+    if(this.activeIndex === this.urls.length-1){
+      return;
     }
+    this.activeIndex++;
+    if(this.activeIndex === this.urls.length-1){
+      //last item reached
+      this.slideshowEnded.emit();
+    }
+    
   }
   onPrev(){    
     this.activeIndex--;
