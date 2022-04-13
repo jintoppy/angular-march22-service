@@ -11,11 +11,9 @@ export class StudentListComponent implements OnInit {
   students: Student[] = [];
   constructor(private stuService: StudentService) { }
 
-  ngOnInit(): void {
+  //life cycle method
+  ngOnInit(): void {    
     this.students = this.stuService.getStudents();
   }
 
 }
-
-
-
