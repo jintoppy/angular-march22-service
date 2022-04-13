@@ -1,1 +1,6 @@
-<p>slideshow works!</p>
+<div>
+    <h5>{{slideshowTitle}}</h5>
+    <button (click)="onPrev()"><</button>
+    <img [src]="urls[activeIndex]" height="100" src="" alt="">
+    <button (click)="onNext()">></button>
+</div>

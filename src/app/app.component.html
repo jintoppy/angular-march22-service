@@ -1,6 +1,10 @@
-<h1>
-  Student Application
-</h1>
 
+<img height="100"  src="https://media.istockphoto.com/photos/cat-world-picture-id1311993425?s=612x612" alt="">
+<img height="100"  [src]="activeImgUrl" alt="">
+
+
+<app-slideshow slideshowTitle="Dog slideshow" [urls]="dogList"></app-slideshow>
+
+<app-slideshow slideshowTitle="Cat slideshow" [urls]="catList"></app-slideshow>
 
 <app-student-list></app-student-list>
