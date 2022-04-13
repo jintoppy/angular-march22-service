@@ -15,6 +15,8 @@ export class SlideshowComponent implements OnInit {
   @Output()
   slideshowEnded: EventEmitter<void> = new EventEmitter();
 
+  @Output()
+  slideshowBeginningReached: EventEmitter<void> = new EventEmitter();
   
   activeIndex=0;
   constructor() { }
@@ -26,6 +28,7 @@ export class SlideshowComponent implements OnInit {
   getActiveImageUrl(){
     return this.urls[this.activeIndex];
   }
+
   onNext(){
     if(this.activeIndex === this.urls.length-1){
       return;
@@ -41,6 +44,9 @@ export class SlideshowComponent implements OnInit {
     this.activeIndex--;
     if(this.activeIndex < 0){
       this.activeIndex = this.urls.length - 1;
+    }
+    if(this.activeIndex === 0){
+      this.slideshowBeginningReached.emit();
     }
   }
 

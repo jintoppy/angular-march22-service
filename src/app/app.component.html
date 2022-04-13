@@ -16,7 +16,14 @@
      (click)="onBtnClick()"
 >Click me</button> -->
 
-<app-slideshow slideshowTitle="Cat slideshow" [urls]="catList"></app-slideshow>
+<app-slideshow 
+    slideshowTitle="Cat slideshow"
+    [urls]="catList"
+    (slideshowBeginningReached)="onCatSlideshowBeginning()"
+>
+</app-slideshow>
+
+<h3>Cat slideshow Beginning counter: {{catSlideshowCounter}}</h3>
 
 <app-student-list></app-student-list>
 

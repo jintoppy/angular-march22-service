@@ -13,12 +13,17 @@ export class AppComponent {
   dogList:string[] = [];
   catList:string[] = [];
   showDogMessage = false;
+  catSlideshowCounter = 1;
   constructor(private slideshowService: SlideshowService){
 
   }
 
   onDogSlideshowEnded(){
     this.showDogMessage = true;
+  }
+
+  onCatSlideshowBeginning(){
+    this.catSlideshowCounter++;
   }
 
   ngOnInit(){
